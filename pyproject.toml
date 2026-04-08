@@ -16,22 +16,22 @@ dependencies = [
     "requests==2.32.3",
     "openai==1.51.0",
     "pyyaml==6.0.2",
+    "openenv>=0.2.0",
 ]
 
 [project.optional-dependencies]
 dev = ["pytest", "httpx"]
 
+[project.scripts]
+server = "uvicorn server.app:app --host 0.0.0.0 --port 7860"
+
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["support_ticket_routing*"]
-
-[project.scripts]
-serve = "uvicorn app:app --host 0.0.0.0 --port 7860"
 
 [tool.openenv]
 name = "support_ticket_routing"
 version = "1.0.0"
-entry_point = "app:app"
+entry_point = "server.app:app"
 framework = "fastapi"
 port = 7860
 spec = "openenv.yaml"
