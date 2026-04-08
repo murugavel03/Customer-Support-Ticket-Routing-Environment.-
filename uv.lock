@@ -1,0 +1,198 @@
+version = 1
+requires-python = ">=3.11"
+
+[[package]]
+name = "support-ticket-routing-env"
+version = "1.0.0"
+source = { editable = "." }
+dependencies = [
+  { name = "fastapi", version = "0.115.0" },
+  { name = "uvicorn", extras = ["standard"], version = "0.30.6" },
+  { name = "pydantic", version = "2.8.2" },
+  { name = "requests", version = "2.32.3" },
+  { name = "openai", version = "1.51.0" },
+  { name = "pyyaml", version = "6.0.2" },
+  { name = "openenv", version = "0.2.0" },
+]
+
+[[package]]
+name = "annotated-types"
+version = "0.7.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/annotated_types-0.7.0.tar.gz", hash = "sha256:aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89" }
+
+[[package]]
+name = "anyio"
+version = "4.4.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/anyio-4.4.0.tar.gz", hash = "sha256:5aadc6a1fb5fabed558b46a2a1a0f1f89b4f47f5de12f2a5a1cb39e5fde5e9eb" }
+
+[[package]]
+name = "certifi"
+version = "2024.8.30"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/certifi-2024.8.30.tar.gz", hash = "sha256:bec941d2aa8195e248a60b31ff9f0558284cf01a52591ceda73ea9afffd69fd9" }
+
+[[package]]
+name = "charset-normalizer"
+version = "3.3.2"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/charset_normalizer-3.3.2.tar.gz", hash = "sha256:f30c3cb33b24454a82faecaf01b19c18562b1e197be8dce04b8b5c4ef0e61a39" }
+
+[[package]]
+name = "click"
+version = "8.1.7"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/click-8.1.7.tar.gz", hash = "sha256:ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de" }
+
+[[package]]
+name = "distro"
+version = "1.9.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/distro-1.9.0.tar.gz", hash = "sha256:2fa77c6fd8940f116ee1d6b94a2f90b13b5ea8d019b98bc8bafdcabcdd9bdbed" }
+
+[[package]]
+name = "fastapi"
+version = "0.115.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+  { name = "pydantic", version = "2.8.2" },
+  { name = "starlette", version = "0.38.6" },
+  { name = "typing-extensions", version = "4.12.2" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/fastapi-0.115.0.tar.gz", hash = "sha256:2f90491297f4f0e6248b11af40f571ee06c88a40a78af2a3fbf24ac1b3ee64f1" }
+
+[[package]]
+name = "h11"
+version = "0.14.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/h11-0.14.0.tar.gz", hash = "sha256:8f19fbbe99e72420ff35c00b27a34cb9937e902a8b810e2c88300c6f0a3b699d" }
+
+[[package]]
+name = "httpcore"
+version = "1.0.5"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/httpcore-1.0.5.tar.gz", hash = "sha256:34a38e2f9291467ee3b44e89dd52615370e152954ba21721378a87b2960f7a61" }
+
+[[package]]
+name = "httpx"
+version = "0.27.2"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/httpx-0.27.2.tar.gz", hash = "sha256:f7c2be1d2f3c3c3d67fade9d0b5eedc5c77a7acd7218e671a68b6a6e55f1fc3b" }
+
+[[package]]
+name = "idna"
+version = "3.10"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/idna-3.10.tar.gz", hash = "sha256:12f65c9b470abda6dc35cf9b9d8b0deb6a1b4e57b47f09f8c7bff0ba4e31a9f0" }
+
+[[package]]
+name = "jiter"
+version = "0.5.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/jiter-0.5.0.tar.gz", hash = "sha256:e21600d48e845882a0bfce2c9ca3a8c1cf8e8dee58e60f35f57f24cb8b87e97e" }
+
+[[package]]
+name = "openai"
+version = "1.51.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+  { name = "anyio", version = "4.4.0" },
+  { name = "distro", version = "1.9.0" },
+  { name = "httpx", version = "0.27.2" },
+  { name = "jiter", version = "0.5.0" },
+  { name = "pydantic", version = "2.8.2" },
+  { name = "sniffio", version = "1.3.1" },
+  { name = "tqdm", version = "4.66.5" },
+  { name = "typing-extensions", version = "4.12.2" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/openai-1.51.0.tar.gz", hash = "sha256:5a7e1b18985e52fff0e1cfa1f0cf494f71c6b1c7b1bbbcc16c5cad16c4e0a9e8" }
+
+[[package]]
+name = "openenv"
+version = "0.2.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/openenv-0.2.0.tar.gz", hash = "sha256:placeholder" }
+
+[[package]]
+name = "pydantic"
+version = "2.8.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+  { name = "annotated-types", version = "0.7.0" },
+  { name = "pydantic-core", version = "2.20.1" },
+  { name = "typing-extensions", version = "4.12.2" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/pydantic-2.8.2.tar.gz", hash = "sha256:6f62c13d067b0755ad1c21a34bdd06c0c12625a22b0fc09c6b149816604f7ab2" }
+
+[[package]]
+name = "pydantic-core"
+version = "2.20.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/pydantic_core-2.20.1.tar.gz", hash = "sha256:26ca695eeee5f9f1aeeb211ffc12f10bcb6f71e2989988fda61dabd65db878d4" }
+
+[[package]]
+name = "pyyaml"
+version = "6.0.2"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/pyyaml-6.0.2.tar.gz", hash = "sha256:d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e" }
+
+[[package]]
+name = "requests"
+version = "2.32.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+  { name = "certifi", version = "2024.8.30" },
+  { name = "charset-normalizer", version = "3.3.2" },
+  { name = "idna", version = "3.10" },
+  { name = "urllib3", version = "2.2.3" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/requests-2.32.3.tar.gz", hash = "sha256:55365417734eb18255590a9f9e50c8f9abd27b2edccff7e48327b02b58c1d7b0" }
+
+[[package]]
+name = "sniffio"
+version = "1.3.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/sniffio-1.3.1.tar.gz", hash = "sha256:f4324edc670a0f49750a81b895f35c3a579e364cf2b3e81189c8f32330e7d79e" }
+
+[[package]]
+name = "starlette"
+version = "0.38.6"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+  { name = "anyio", version = "4.4.0" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/starlette-0.38.6.tar.gz", hash = "sha256:863a1588f5574e70a821dadefb41e4881ea451a47a3cd1b4df359d4ffdc58c7d" }
+
+[[package]]
+name = "tqdm"
+version = "4.66.5"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/tqdm-4.66.5.tar.gz", hash = "sha256:e1020aef2e5096702d8a025ac7d16b1577279c9d63f8375b63083e9a5f0fcbad" }
+
+[[package]]
+name = "typing-extensions"
+version = "4.12.2"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/typing_extensions-4.12.2.tar.gz", hash = "sha256:1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8" }
+
+[[package]]
+name = "urllib3"
+version = "2.2.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/urllib3-2.2.3.tar.gz", hash = "sha256:e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9" }
+
+[[package]]
+name = "uvicorn"
+version = "0.30.6"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+  { name = "click", version = "8.1.7" },
+  { name = "h11", version = "0.14.0" },
+  { name = "httptools", version = "0.6.1" },
+  { name = "python-dotenv", version = "1.0.1" },
+  { name = "uvloop", version = "0.19.0" },
+  { name = "watchfiles", version = "0.23.0" },
+  { name = "websockets", version = "12.0" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/uvicorn-0.30.6.tar.gz", hash = "sha256:5928b6c8f99cd2c9f3a99e7e72e7b2f6b9d30f6df0e5b0bf55f67b26b4cefdc1" }
