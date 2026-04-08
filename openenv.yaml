@@ -1,0 +1,107 @@
+name: support_ticket_routing
+version: "1.0.0"
+description: >
+  A real-world customer support ticket triage environment.
+  An AI agent reads support tickets and must classify urgency,
+  route to the correct department, and draft first-response messages.
+
+author: "OpenEnv Hackathon Participant"
+license: Apache-2.0
+
+tasks:
+  - id: task1
+    name: Urgency Classification
+    difficulty: easy
+    description: >
+      Given a support ticket, classify its urgency as one of:
+      low, medium, high, or critical.
+    reward_range: [0.0, 1.0]
+    action_space:
+      type: discrete
+      fields:
+        urgency:
+          type: string
+          enum: [low, medium, high, critical]
+
+  - id: task2
+    name: Ticket Routing
+    difficulty: medium
+    description: >
+      Given a support ticket, provide the urgency level AND
+      route it to the correct department.
+    reward_range: [0.0, 1.0]
+    action_space:
+      type: structured
+      fields:
+        urgency:
+          type: string
+          enum: [low, medium, high, critical]
+        department:
+          type: string
+          enum: [authentication, billing, engineering, support, product, security]
+
+  - id: task3
+    name: Full Triage with Response Draft
+    difficulty: hard
+    description: >
+      Full triage: classify urgency, route to department, AND
+      write a professional first-response message to the customer.
+    reward_range: [0.0, 1.0]
+    action_space:
+      type: structured
+      fields:
+        urgency:
+          type: string
+          enum: [low, medium, high, critical]
+        department:
+          type: string
+          enum: [authentication, billing, engineering, support, product, security]
+        response_draft:
+          type: string
+          min_words: 30
+          max_words: 200
+
+observation_space:
+  type: structured
+  fields:
+    ticket_id:
+      type: string
+    subject:
+      type: string
+    body:
+      type: string
+    customer_tier:
+      type: string
+      enum: [free, pro, enterprise]
+    previous_contacts:
+      type: integer
+    task_id:
+      type: string
+    task_description:
+      type: string
+
+api:
+  reset:
+    method: POST
+    path: /reset
+    query_params:
+      task_id:
+        type: string
+        default: task1
+  step:
+    method: POST
+    path: /step
+    query_params:
+      session_id:
+        type: string
+  state:
+    method: GET
+    path: /state
+    query_params:
+      session_id:
+        type: string
+
+runtime:
+  framework: fastapi
+  python_version: "3.11"
+  port: 7860
