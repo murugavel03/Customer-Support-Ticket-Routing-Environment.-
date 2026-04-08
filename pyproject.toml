@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "support-ticket-routing-env"
+version = "1.0.0"
+description = "OpenEnv-compliant customer support ticket routing environment"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi==0.115.0",
+    "uvicorn[standard]==0.30.6",
+    "pydantic==2.8.2",
+    "requests==2.32.3",
+    "openai==1.51.0",
+    "pyyaml==6.0.2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "httpx"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["support_ticket_routing*"]
+
+[project.scripts]
+serve = "uvicorn app:app --host 0.0.0.0 --port 7860"
+
+[tool.openenv]
+name = "support_ticket_routing"
+version = "1.0.0"
+entry_point = "app:app"
+framework = "fastapi"
+port = 7860
+spec = "openenv.yaml"
